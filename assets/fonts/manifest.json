@@ -1,0 +1,16 @@
+{
+  "cn": {
+    "source": "https://raw.githubusercontent.com/adobe-fonts/source-han-sans/a4f7cf94edfb9d7ffbdfc4841de276358bd7e0f2/Variable/WOFF2/TTF/Subset/SourceHanSansCN-VF.ttf.woff2",
+    "source_sha256": "f971e3bff46f76b49e1d5510556c2297c618ec4b491a295a4e741cdd38257799",
+    "subset_sha256": "bc4d0d1b5188b42e2f002473e84065008dc20cb3daf1eb9a8a934a6476fc40b0",
+    "bytes": 41028,
+    "glyphs": 164
+  },
+  "latin": {
+    "source": "https://raw.githubusercontent.com/adobe-fonts/source-sans/87b37a2daaed80fcb8e8ccb0085c4d72ddade12e/WOFF2/VF/SourceSans3VF-Upright.ttf.woff2",
+    "source_sha256": "5f16566f7a40d39b339ad26be151fa5a1ab1f0c2574c7a2e619765584a1acbd8",
+    "subset_sha256": "7b666ec0c6883c96738c8db3a4ed0760e13fbbf407c2a69ec12e2c8df087edc0",
+    "bytes": 37684,
+    "glyphs": 193
+  }
+}

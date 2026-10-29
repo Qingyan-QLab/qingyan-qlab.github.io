@@ -18,6 +18,8 @@ Open http://127.0.0.1:8765/. No framework, package installation, or build step i
 - `style.css`: responsive layout and visual design.
 - `main.js`: language selection and localized metadata.
 - The page uses typography only; no illustrations are displayed.
+- `TYPOGRAPHY.md`: bilingual typesetting decisions and primary-source design references.
+- `assets/fonts/`: self-hosted, OFL-licensed subsets; regenerate them with `scripts/subset-fonts.py` when copy changes. See the font directory README.
 
 ## Publishing
 
