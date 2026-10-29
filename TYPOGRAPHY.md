@@ -1,24 +1,56 @@
-# Q-lab typography
+# Q-lab 的字体与版面
 
-The typography follows the site's concise, text-only format. Chinese and English share a font family lineage and layout, while their typesetting values are tuned separately.
+## 设计意图
 
-## References
+科学与艺术的气息，落实为一页清楚、安静、有书卷感的研究陈述。科学感来自内容秩序、稳定的对齐与清晰的层次；艺术感来自字形的笔画变化、整段文字的疏密以及留白的节奏。保留单页、无配图、中文短标语在桌面端一行的约束。
 
-- [W3C Chinese Layout Requirements](https://www.w3.org/TR/clreq/): normal Han glyph spacing, punctuation placement, and Chinese line breaking. This is a Group Note Draft, not a mandatory website standard. It also permits tighter spacing in display typography; this site deliberately uses natural Chinese spacing.
-- [U.S. Web Design System typography](https://designsystem.digital.gov/components/typography/): legible body size, alignment, line length, leading, and grouping through whitespace. Its Latin character-count guidance is not applied to Chinese as a Han-character quota.
+## 设计师的资料
 
-## Site choices
+以下为实际阅读的设计实践资料。书籍以公开分享和节选为限，未把未读完整书的内容作为依据。
 
-| Element | Chinese | English |
+1. **左佐：《排版的风格》公开分享与对谈**
+
+   [站酷主办方现场记录](https://www.zcool.com.cn/article/ZOTgyMDY4.html) · [作者作品页](https://www.zcool.com.cn/work/ZMzY5NzEyMjA%3D.html)
+
+   字体与平面设计师左佐强调，开始设计时先确认风格，理解风格的来历，再判断字体和版面的关系。对本站的启发是先确立研究机构的气质，让标题、正文和留白服从同一个表达。
+
+2. **陈巧育讲座内容：《搭配的三个建议：中文怎么搭英文？》**
+
+   [justfont 原文，苏炜翔整理](https://blog.justfont.com/2020/02/how-to-match/)
+
+   页面明确说明内容来自 justfont 多媒体设计师陈巧育的讲座。文章以真实品牌案例讨论气质上的和谐及主次衬托。对本站的启发是把表现力集中在主标题，正文与辅助文字保持平静；中英搭配看整体性格与视觉轻重，不仅看字体名称。
+
+3. **Rong：《日本的字体设计比较好看？让我们从明体说起》**
+
+   [设计师原文](https://blog.justfont.com/2023/09/whyjpdesign/)
+
+   作者通过同字号、同间距的字样，说明字面、中宫和笔形如何改变阅读感受，并比较纯汉字与汉字、假名混排的疏密。对本站的启发是独立审视中文段落的密度，在实际显示大小下观察整行、整段，而不是只比较放大的单字。
+
+4. **justfont：《兰阳明体排版设定小秘诀》**
+
+   [字体制作方的应用说明](https://blog.justfont.com/2022/12/lanyang-tip/)
+
+   用具体字样解释正文与标题的光学尺寸及空间关系。本文的具体数值针对兰阳明体；本站不直接套用这些数值，也未使用该商业字体。
+
+以上文章的概括均为阅读笔记。下面的方案是本站的设计选择，不是这些作者替 Q-lab 指定的方案。
+
+## 落实到页面
+
+- 主标题采用**思源宋体**，让笔画的粗细变化承担主要表现力。英文标题使用该字体内置、经过中西文协调的 Source Serif 字形。
+- 正文使用**思源黑体与 Source Sans 3**。四个理念保持清晰、稳定的文字块，便于连续阅读。
+- 简化眉题，移除重复的 Q-LAB 与英文全大写；序号改为安静的灰绿色。主次通过字号、字重和空间来区分。
+- 中文标题在空间充足时完整成行；手机空间不足时优先按逗号分句。英文按两句话组织，窄屏自然回流。
+- 正文左对齐，中英文独立设置行长与行距。标题放松，段落紧凑，段与段之间有明确停顿。
+- 纸白底色与深绿墨色延续网站原有气质。页面不新增装饰插画。
+
+## 当前试排参数
+
+| 元素 | 中文 | 英文 |
 | --- | --- | --- |
-| Main headline, desktop | 56px, weight 500, 1.35 line height, normal tracking | 60px, weight 500, 1.12 line height, −0.018em tracking |
-| Introduction | 20px / 1.8, at most 36em | 22px / 1.55, at most 62ch |
-| Supporting paragraph | 18px / 1.8, at most 40em | 20px / 1.6, at most 68ch |
-| Four principle titles | 22px / 1.5, weight 500 | 24px / 1.3, weight 500 |
-| Four principle paragraphs | 17px / 1.8 | 18px / 1.6 |
+| 主标题（桌面） | 思源宋体，56px，400，1.4 行高 | 同字体的 Latin，58px，400，1.18 行高 |
+| 主说明 | 20px / 1.8，最长 36em | 22px / 1.55，最长 62ch |
+| 补充段落 | 18px / 1.8，最长 40em | 20px / 1.6，最长 68ch |
+| 四点标题 | 22px / 1.5，500 | 24px / 1.3，500 |
+| 四点正文 | 17px / 1.8 | 18px / 1.6 |
 
-These values are editorial choices for this page, not numbers prescribed by W3C. Sizes use rem units and fluid scaling so browser text sizing remains useful. Auxiliary text is smaller than prose, with sufficient contrast and comfortable interactive targets.
-
-The short Chinese headline stays on one line when there is room. Its two clauses can flow onto separate lines on narrow screens without breaking a phrase unnecessarily. English keeps the two sentences as separate lines at desktop width. Neither language uses a fixed-height text container or clipped text.
-
-The page uses a 960px maximum width, left alignment, and a two-column principles grid that becomes one column on phones. The fonts are [self-hosted OFL subsets](assets/fonts/README.md), totaling approximately 77 KiB. No external font request is needed. The current text coverage and byte sizes are recorded in `assets/fonts/manifest.json`.
+实际效果以浏览器中的双语整页和手机试排为准。字体由本站托管，保留原作者版权和 OFL 许可；裁剪范围、文件大小和来源见 [fonts/README](assets/fonts/README.md) 与 `assets/fonts/manifest.json`。

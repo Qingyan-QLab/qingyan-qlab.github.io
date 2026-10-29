@@ -12,5 +12,12 @@
     "subset_sha256": "7b666ec0c6883c96738c8db3a4ed0760e13fbbf407c2a69ec12e2c8df087edc0",
     "bytes": 37684,
     "glyphs": 193
+  },
+  "serif": {
+    "source": "https://raw.githubusercontent.com/adobe-fonts/source-han-serif/7889f11bf31170b5d092a083b357c8c8130f89e0/Variable/WOFF2/TTF/Subset/SourceHanSerifCN-VF.ttf.woff2",
+    "source_sha256": "556749ba783b148fa1f48644e8883e5b9351f01abd0d1faad0ba24a21185e76a",
+    "subset_sha256": "43aab7a491bdb6d2ab786f3cbeb339f56b9a42f90434f5e7a6bccf1649b83e5c",
+    "bytes": 20988,
+    "glyphs": 33
   }
 }

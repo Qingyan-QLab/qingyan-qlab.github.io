@@ -15,18 +15,31 @@ ROOT = Path(__file__).resolve().parents[1]
 CACHE = ROOT / '.artifacts/font-sources'
 OUT = ROOT / 'assets/fonts'
 SOURCES = {
-    'cn': ('source-han-sans-cn.woff2', 'https://raw.githubusercontent.com/adobe-fonts/source-han-sans/a4f7cf94edfb9d7ffbdfc4841de276358bd7e0f2/Variable/WOFF2/TTF/Subset/SourceHanSansCN-VF.ttf.woff2'),
-    'latin': ('source-sans-3.woff2', 'https://raw.githubusercontent.com/adobe-fonts/source-sans/87b37a2daaed80fcb8e8ccb0085c4d72ddade12e/WOFF2/VF/SourceSans3VF-Upright.ttf.woff2'),
+    'cn': ('source-han-sans-cn.woff2', 'https://raw.githubusercontent.com/adobe-fonts/source-han-sans/a4f7cf94edfb9d7ffbdfc4841de276358bd7e0f2/Variable/WOFF2/TTF/Subset/SourceHanSansCN-VF.ttf.woff2', 'QLab Sans CN', 'qlab-sans-cn.woff2'),
+    'latin': ('source-sans-3.woff2', 'https://raw.githubusercontent.com/adobe-fonts/source-sans/87b37a2daaed80fcb8e8ccb0085c4d72ddade12e/WOFF2/VF/SourceSans3VF-Upright.ttf.woff2', 'QLab Sans Latin', 'qlab-sans-latin.woff2'),
+    'serif': ('source-han-serif-cn.woff2', 'https://raw.githubusercontent.com/adobe-fonts/source-han-serif/7889f11bf31170b5d092a083b357c8c8130f89e0/Variable/WOFF2/TTF/Subset/SourceHanSerifCN-VF.ttf.woff2', 'QLab Serif', 'qlab-serif.woff2'),
 }
 
 class Copy(HTMLParser):
     def __init__(self):
         super().__init__()
         self.parts = []
+        self.headline_parts = []
+        self.in_headline = False
     def handle_data(self, data):
         self.parts.append(data)
+        if self.in_headline:
+            self.headline_parts.append(data)
     def handle_starttag(self, tag, attrs):
-        self.parts.extend(value for key, value in attrs if value and (key.startswith('data-') or key in ('aria-label', 'alt', 'content')))
+        if tag == 'h1':
+            self.in_headline = True
+        values = [value for key, value in attrs if value and (key.startswith('data-') or key in ('aria-label', 'alt', 'content'))]
+        self.parts.extend(values)
+        if self.in_headline:
+            self.headline_parts.extend(values)
+    def handle_endtag(self, tag):
+        if tag == 'h1':
+            self.in_headline = False
 
 copy = Copy()
 copy.feed((ROOT / 'index.html').read_text())
@@ -36,7 +49,7 @@ CACHE.mkdir(parents=True, exist_ok=True)
 OUT.mkdir(parents=True, exist_ok=True)
 css = (ROOT / 'style.css').read_text()
 manifest = {}
-for kind, (filename, url) in SOURCES.items():
+for kind, (filename, url, family, output_name) in SOURCES.items():
     path = CACHE / filename
     if not path.exists():
         urlretrieve(url, path)
@@ -44,10 +57,12 @@ for kind, (filename, url) in SOURCES.items():
     cmap = font.getBestCmap()
     # Keep normal Latin, numbers, and punctuation; Han is limited to site copy.
     wanted = (set(range(0x20, 0x100)) | {cp for cp in codepoints if cp < 0x3000}) if kind == 'latin' else {cp for cp in codepoints if cp >= 0x3000}
+    if kind == 'serif':
+        wanted = {ord(char) for char in ''.join(copy.headline_parts) if not char.isspace()} | {0x20}
     available = wanted & set(cmap)
     missing = wanted - set(cmap)
-    if kind == 'cn' and missing:
-        raise ValueError(f'Missing Han glyphs: {sorted(missing)}')
+    if kind in ('cn', 'serif') and missing:
+        raise ValueError(f'Missing {kind} glyphs: {sorted(missing)}')
     options = subset.Options()
     options.layout_features = ['*']
     options.name_IDs = ['*']
@@ -57,7 +72,6 @@ for kind, (filename, url) in SOURCES.items():
     subsetter.populate(unicodes=available)
     subsetter.subset(font)
     font = instantiateVariableFont(font, {'wght': (400, 600)}, inplace=True)
-    family = 'QLab Sans CN' if kind == 'cn' else 'QLab Sans Latin'
     psname = family.replace(' ', '')
     # OFL reserved-name compliance: rename modified subsets, preserve copyright/license.
     replacements = {1: family, 3: f'{psname}-Subset-1.0', 4: family, 6: psname, 16: family, 21: family, 25: psname}
@@ -70,10 +84,10 @@ for kind, (filename, url) in SOURCES.items():
                 if name.nameID == record.postscriptNameID:
                     name.string = f'{psname}-{int(record.coordinates["wght"])}'.encode(name.getEncoding())
     font.flavor = 'woff2'
-    target = OUT / f'qlab-sans-{kind}.woff2'
+    target = OUT / output_name
     font.save(target)
     digest = sha256(target.read_bytes()).hexdigest()
-    css = re.sub(rf'assets/fonts/qlab-sans-{kind}\.woff2(?:\?v=[a-f0-9]+)?', f'assets/fonts/qlab-sans-{kind}.woff2?v={digest[:12]}', css)
+    css = re.sub(rf'assets/fonts/{re.escape(output_name)}(?:\?v=[a-f0-9]+)?', f'assets/fonts/{output_name}?v={digest[:12]}', css)
     manifest[kind] = {'source': url, 'source_sha256': sha256(path.read_bytes()).hexdigest(), 'subset_sha256': digest, 'bytes': target.stat().st_size, 'glyphs': len(available)}
     print(f'{target.name}: {target.stat().st_size:,} bytes; {len(available)} codepoints')
 (ROOT / 'style.css').write_text(css)

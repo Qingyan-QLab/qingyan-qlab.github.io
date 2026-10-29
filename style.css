@@ -1,6 +1,13 @@
 @charset "UTF-8";
 /* Self-hosted, OFL-licensed subsets. Sources and regeneration: assets/fonts/README.md. */
 @font-face {
+  font-family: "QLab Serif";
+  src: url("assets/fonts/qlab-serif.woff2?v=43aab7a491bd") format("woff2");
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+}
+@font-face {
   font-family: "QLab Sans Latin";
   src: url("assets/fonts/qlab-sans-latin.woff2?v=7b666ec0c688") format("woff2");
   font-style: normal;
@@ -21,6 +28,7 @@
   --line: #d4d8cb;
   --accent: #bb4b2a;
   --sans: "QLab Sans Latin", "QLab Sans CN", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --display: "QLab Serif", "Songti SC", "SimSun", serif;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -55,8 +63,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .skip-link { position: fixed; top: 12px; left: 16px; z-index: 100; padding: 14px 20px; background: var(--ink); color: white; transform: translateY(-180%); }
 .skip-link:focus { transform: translateY(0); }
 .intro { padding-block: 4.5rem 4rem; }
-.eyebrow { margin: 0 0 1.5rem; font-size: .8125rem; line-height: 1.6; font-weight: 500; color: var(--muted); }
-h1 { font-size: clamp(2rem, 5.5vw, 3.5rem); font-weight: 500; line-height: 1.35; letter-spacing: normal; margin: 0 0 1.75rem; text-wrap: balance; }
+.eyebrow { margin: 0 0 1.75rem; font-size: .8125rem; line-height: 1.6; font-weight: 400; color: var(--muted); }
+h1 { font-family: var(--display); font-size: clamp(2rem, 5.5vw, 3.5rem); font-weight: 400; line-height: 1.4; letter-spacing: normal; margin: 0 0 2rem; text-wrap: balance; }
 /* Keep each short clause together when possible; wrap only when space requires it. */
 h1 span { display: inline-block; max-width: 100%; }
 .intro-lead, .intro-mission { margin: 0; }
@@ -66,7 +74,7 @@ h1 span { display: inline-block; max-width: 100%; }
 .philosophy h2 { font-size: .9375rem; line-height: 1.6; font-weight: 500; margin: 0 0 2rem; color: var(--muted); }
 .principles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 4rem; row-gap: 2.5rem; padding: 0; margin: 0; list-style: none; }
 .principle { display: grid; grid-template-columns: 1.5rem minmax(0, 1fr); column-gap: 1rem; align-items: baseline; }
-.item-number { font-size: .8125rem; line-height: 1.5; font-variant-numeric: tabular-nums; color: var(--accent); }
+.item-number { font-size: .8125rem; line-height: 1.5; font-variant-numeric: tabular-nums; color: var(--muted); }
 .principle h3 { font-size: 1.375rem; font-weight: 500; line-height: 1.5; letter-spacing: normal; margin: 0 0 .625rem; }
 .principle p { font-size: 1.0625rem; line-height: 1.8; color: var(--muted); margin: 0; }
 .footer { border-top: 1px solid var(--line); min-height: 5rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; color: var(--muted); font-size: .875rem; }
@@ -75,8 +83,7 @@ h1 span { display: inline-block; max-width: 100%; }
 /* Chinese uses full-width punctuation and its natural glyph spacing. */
 html[lang="zh-CN"] { line-break: strict; word-break: normal; }
 /* Latin and Han text need different measures and vertical rhythms. */
-html[lang="en"] .eyebrow { letter-spacing: .07em; }
-html[lang="en"] h1 { font-size: clamp(2.25rem, 6vw, 3.75rem); line-height: 1.12; letter-spacing: -.018em; }
+html[lang="en"] h1 { font-size: clamp(2.125rem, 5.8vw, 3.625rem); line-height: 1.18; letter-spacing: -.012em; }
 html[lang="en"] h1 span { display: block; }
 html[lang="en"] .intro-lead { max-width: 62ch; font-size: 1.375rem; line-height: 1.55; }
 html[lang="en"] .intro-mission { max-width: 68ch; font-size: 1.25rem; line-height: 1.6; }
