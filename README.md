@@ -1,4 +1,4 @@
-# Q-lab official website
+# Q-Lab official website
 
 Official static website for the [Qingyan-QLab](https://github.com/Qingyan-QLab) organization, intended for **https://qlab-ai.org/**.
 

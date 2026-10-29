@@ -1,8 +1,8 @@
-# Q-lab web fonts
+# Q-Lab web fonts
 
-The site uses self-hosted subsets of Adobe's **Source Han Serif CN (思源宋体)** for the main content (headlines and prose), **Source Han Sans CN (思源黑体)** for Chinese interface text, and **Source Sans 3** for Latin interface text. All are licensed under SIL OFL 1.1; the unmodified upstream licenses are included in this directory.
+The site uses a self-hosted subset of Adobe's **Source Han Serif CN (思源宋体)** for all content and interface text. The earlier **Source Han Sans CN (思源黑体)** and **Source Sans 3** subsets remain in the source archive but are not requested by the page. All are licensed under SIL OFL 1.1; the unmodified upstream licenses are included in this directory.
 
-These are modified, reduced-character-set fonts. Their internal family names are **QLab Serif**, **QLab Sans CN**, and **QLab Sans Latin** to respect the upstream Reserved Font Name. This does not imply that Q-lab designed the original typefaces. Copyright and license metadata remain in each font.
+These are modified, reduced-character-set fonts. Their internal family names are **QLab Serif**, **QLab Sans CN**, and **QLab Sans Latin** to respect the upstream Reserved Font Name. This does not imply that Q-Lab designed the original typefaces. Copyright and license metadata remain in each font.
 
 - Main-content source: [Adobe Source Han Serif](https://github.com/adobe-fonts/source-han-serif), release commit `7889f11bf31170b5d092a083b357c8c8130f89e0`. Its built-in Latin is derived from Source Serif and adjusted for CJK use, as documented in the [official ReadMe](https://github.com/adobe-fonts/source-han-serif/blob/release/SourceHanSerifReadMe.pdf). The main-content subset covers the full bilingual site text and weights 400–650. It is preloaded to prioritize its first render.
 - Chinese interface source: [Adobe Source Han Sans](https://github.com/adobe-fonts/source-han-sans), release commit `a4f7cf94edfb9d7ffbdfc4841de276358bd7e0f2`.

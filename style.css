@@ -2,7 +2,7 @@
 /* Self-hosted, OFL-licensed subsets. Sources and regeneration: assets/fonts/README.md. */
 @font-face {
   font-family: "QLab Serif";
-  src: url("assets/fonts/qlab-serif.woff2?v=039a05ff266a") format("woff2");
+  src: url("assets/fonts/qlab-serif.woff2?v=cad519ae6835") format("woff2");
   font-style: normal;
   font-weight: 400 650;
   font-display: swap;
@@ -50,7 +50,7 @@ a, button { -webkit-tap-highlight-color: transparent; }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
 ::selection { background: #e8c5ae; color: var(--ink); }
 .wrap { width: min(60rem, calc(100% - clamp(2.5rem, 8vw, 6rem))); margin-inline: auto; }
-.header { min-height: 5.5rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); font-family: var(--sans); font-weight: 400; }
+.header { min-height: 5.5rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); font-family: var(--display); font-weight: 400; }
 .wordmark { display: inline-flex; align-items: center; font-size: 2rem; font-weight: 600; line-height: 1; letter-spacing: -.035em; }
 .wordmark-dot { color: var(--accent); }
 .q-mark { position: relative; width: 22px; height: 22px; margin-right: 12px; border: 2px solid var(--ink); border-radius: 50%; }
@@ -63,7 +63,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .skip-link { position: fixed; top: 12px; left: 16px; z-index: 100; padding: 14px 20px; background: var(--ink); color: white; transform: translateY(-180%); }
 .skip-link:focus { transform: translateY(0); }
 .intro { padding-block: 4.5rem 4rem; }
-.eyebrow { margin: 0 0 1.75rem; font: 400 .8125rem/1.6 var(--sans); color: var(--muted); }
 h1 { font-family: var(--display); font-size: clamp(2.125rem, 5.8vw, 3.75rem); font-weight: 650; line-height: 1.35; letter-spacing: normal; margin: 0 0 2rem; text-wrap: balance; }
 /* Keep each short clause together when possible; wrap only when space requires it. */
 h1 span { display: inline-block; max-width: 100%; }
@@ -74,10 +73,10 @@ h1 span { display: inline-block; max-width: 100%; }
 .philosophy h2 { font-size: 1.125rem; line-height: 1.6; font-weight: 600; margin: 0 0 2rem; color: var(--ink); }
 .principles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 4rem; row-gap: 2.5rem; padding: 0; margin: 0; list-style: none; }
 .principle { display: grid; grid-template-columns: 1.5rem minmax(0, 1fr); column-gap: 1rem; align-items: baseline; }
-.item-number { font: 400 .8125rem/1.5 var(--sans); font-variant-numeric: tabular-nums; color: var(--muted); }
+.item-number { font: 400 .8125rem/1.5 var(--display); font-variant-numeric: tabular-nums; color: var(--muted); }
 .principle h3 { font-size: 1.5rem; font-weight: 600; line-height: 1.5; letter-spacing: normal; margin: 0 0 .625rem; }
 .principle p { font-size: 1.125rem; line-height: 1.8; margin: 0; }
-.footer { border-top: 1px solid var(--line); min-height: 5rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; color: var(--muted); font: 400 .875rem/1.6 var(--sans); }
+.footer { border-top: 1px solid var(--line); min-height: 5rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; color: var(--muted); font: 400 .875rem/1.6 var(--display); }
 .footer p { margin: 0; }
 .footer a { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; }
 /* Chinese uses full-width punctuation and its natural glyph spacing. */
@@ -101,7 +100,6 @@ html[lang="en"] .principle p { font-size: 1.25rem; line-height: 1.55; }
   .wordmark { font-size: 1.75rem; }
   .q-mark { width: 19px; height: 19px; margin-right: 9px; }
   .intro { padding-block: 2.5rem; }
-  .eyebrow { margin-bottom: 1.25rem; }
   h1 { margin-bottom: 1.5rem; }
   .intro-lead { font-size: 1.25rem; }
   .philosophy { padding-block: 1.75rem 2.5rem; }
