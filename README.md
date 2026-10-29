@@ -2,7 +2,7 @@
 
 Official static website for the [Qingyan-QLab](https://github.com/Qingyan-QLab) organization, intended for **https://qlab-ai.org/**.
 
-The site introduces six user-confirmed research directions: geometry, the physical world, embodied intelligence, continual learning, mental models, and robots that integrate seamlessly into human society. Research descriptions express interests and aspirations, rather than claims of completed results.
+The site introduces six user-confirmed research directions: geometry, the physical world, embodied intelligence, continual learning, mental models, and robots that integrate seamlessly into human society. An overarching research goal connects verifiability to **99.9999% robot reliability**, explicitly labeled as a goal and tied to verification with defined tasks, environments, and time horizons. Research descriptions express interests and aspirations, rather than claims of completed results.
 
 ## Local preview
 
