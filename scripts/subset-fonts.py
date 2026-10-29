@@ -24,22 +24,11 @@ class Copy(HTMLParser):
     def __init__(self):
         super().__init__()
         self.parts = []
-        self.headline_parts = []
-        self.in_headline = False
     def handle_data(self, data):
         self.parts.append(data)
-        if self.in_headline:
-            self.headline_parts.append(data)
     def handle_starttag(self, tag, attrs):
-        if tag == 'h1':
-            self.in_headline = True
         values = [value for key, value in attrs if value and (key.startswith('data-') or key in ('aria-label', 'alt', 'content'))]
         self.parts.extend(values)
-        if self.in_headline:
-            self.headline_parts.extend(values)
-    def handle_endtag(self, tag):
-        if tag == 'h1':
-            self.in_headline = False
 
 copy = Copy()
 copy.feed((ROOT / 'index.html').read_text())
@@ -58,7 +47,7 @@ for kind, (filename, url, family, output_name) in SOURCES.items():
     # Keep normal Latin, numbers, and punctuation; Han is limited to site copy.
     wanted = (set(range(0x20, 0x100)) | {cp for cp in codepoints if cp < 0x3000}) if kind == 'latin' else {cp for cp in codepoints if cp >= 0x3000}
     if kind == 'serif':
-        wanted = {ord(char) for char in ''.join(copy.headline_parts) if not char.isspace()} | {0x20}
+        wanted = {ord(char) for char in ''.join(copy.parts) if not char.isspace()} | {0x20}
     available = wanted & set(cmap)
     missing = wanted - set(cmap)
     if kind in ('cn', 'serif') and missing:
@@ -71,7 +60,7 @@ for kind, (filename, url, family, output_name) in SOURCES.items():
     subsetter = subset.Subsetter(options=options)
     subsetter.populate(unicodes=available)
     subsetter.subset(font)
-    font = instantiateVariableFont(font, {'wght': (400, 600)}, inplace=True)
+    font = instantiateVariableFont(font, {'wght': (400, 650 if kind == 'serif' else 600)}, inplace=True)
     psname = family.replace(' ', '')
     # OFL reserved-name compliance: rename modified subsets, preserve copyright/license.
     replacements = {1: family, 3: f'{psname}-Subset-1.0', 4: family, 6: psname, 16: family, 21: family, 25: psname}
@@ -93,6 +82,7 @@ for kind, (filename, url, family, output_name) in SOURCES.items():
 (ROOT / 'style.css').write_text(css)
 # Refresh CSS URL for browsers that have cached a previous edition.
 html = (ROOT / 'index.html').read_text()
+html = re.sub(r'assets/fonts/qlab-serif\.woff2(?:\?v=[a-f0-9]+)?', f'assets/fonts/qlab-serif.woff2?v={manifest["serif"]["subset_sha256"][:12]}', html)
 html = re.sub(r'style\.css\?v=[a-f0-9]+', f'style.css?v={sha256(css.encode()).hexdigest()[:12]}', html)
 (ROOT / 'index.html').write_text(html)
 import json

@@ -2,9 +2,9 @@
 /* Self-hosted, OFL-licensed subsets. Sources and regeneration: assets/fonts/README.md. */
 @font-face {
   font-family: "QLab Serif";
-  src: url("assets/fonts/qlab-serif.woff2?v=43aab7a491bd") format("woff2");
+  src: url("assets/fonts/qlab-serif.woff2?v=039a05ff266a") format("woff2");
   font-style: normal;
-  font-weight: 400 600;
+  font-weight: 400 650;
   font-display: swap;
 }
 @font-face {
@@ -23,12 +23,12 @@
 }
 :root {
   --paper: #f5f3ed;
-  --ink: #24332a;
-  --muted: #5d665c;
+  --ink: #18271e;
+  --muted: #4b564c;
   --line: #d4d8cb;
   --accent: #bb4b2a;
   --sans: "QLab Sans Latin", "QLab Sans CN", "PingFang SC", "Microsoft YaHei", sans-serif;
-  --display: "QLab Serif", "Songti SC", "SimSun", serif;
+  --display: "QLab Serif", "Songti SC", Georgia, "SimSun", serif;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -36,10 +36,10 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--sans);
-  font-size: 1.0625rem;
+  font-family: var(--display);
+  font-size: 1.125rem;
   line-height: 1.8;
-  font-weight: 400;
+  font-weight: 450;
   font-synthesis: none;
   -webkit-font-smoothing: antialiased;
 }
@@ -50,7 +50,7 @@ a, button { -webkit-tap-highlight-color: transparent; }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
 ::selection { background: #e8c5ae; color: var(--ink); }
 .wrap { width: min(60rem, calc(100% - clamp(2.5rem, 8vw, 6rem))); margin-inline: auto; }
-.header { min-height: 5.5rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
+.header { min-height: 5.5rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); font-family: var(--sans); font-weight: 400; }
 .wordmark { display: inline-flex; align-items: center; font-size: 2rem; font-weight: 600; line-height: 1; letter-spacing: -.035em; }
 .wordmark-dot { color: var(--accent); }
 .q-mark { position: relative; width: 22px; height: 22px; margin-right: 12px; border: 2px solid var(--ink); border-radius: 50%; }
@@ -63,32 +63,33 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .skip-link { position: fixed; top: 12px; left: 16px; z-index: 100; padding: 14px 20px; background: var(--ink); color: white; transform: translateY(-180%); }
 .skip-link:focus { transform: translateY(0); }
 .intro { padding-block: 4.5rem 4rem; }
-.eyebrow { margin: 0 0 1.75rem; font-size: .8125rem; line-height: 1.6; font-weight: 400; color: var(--muted); }
-h1 { font-family: var(--display); font-size: clamp(2rem, 5.5vw, 3.5rem); font-weight: 400; line-height: 1.4; letter-spacing: normal; margin: 0 0 2rem; text-wrap: balance; }
+.eyebrow { margin: 0 0 1.75rem; font: 400 .8125rem/1.6 var(--sans); color: var(--muted); }
+h1 { font-family: var(--display); font-size: clamp(2.125rem, 5.8vw, 3.75rem); font-weight: 650; line-height: 1.35; letter-spacing: normal; margin: 0 0 2rem; text-wrap: balance; }
 /* Keep each short clause together when possible; wrap only when space requires it. */
 h1 span { display: inline-block; max-width: 100%; }
 .intro-lead, .intro-mission { margin: 0; }
-.intro-lead { max-width: 36em; font-size: 1.25rem; line-height: 1.8; }
-.intro-mission { max-width: 40em; color: var(--muted); font-size: 1.125rem; line-height: 1.8; margin-top: 1.25rem; }
+.intro-lead { max-width: 34em; font-size: 1.375rem; font-weight: 550; line-height: 1.75; }
+.intro-mission { max-width: 40em; font-size: 1.125rem; line-height: 1.8; margin-top: 1.25rem; }
 .philosophy { border-top: 1px solid var(--line); padding-block: 2rem 3.5rem; }
-.philosophy h2 { font-size: .9375rem; line-height: 1.6; font-weight: 500; margin: 0 0 2rem; color: var(--muted); }
+.philosophy h2 { font-size: 1.125rem; line-height: 1.6; font-weight: 600; margin: 0 0 2rem; color: var(--ink); }
 .principles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 4rem; row-gap: 2.5rem; padding: 0; margin: 0; list-style: none; }
 .principle { display: grid; grid-template-columns: 1.5rem minmax(0, 1fr); column-gap: 1rem; align-items: baseline; }
-.item-number { font-size: .8125rem; line-height: 1.5; font-variant-numeric: tabular-nums; color: var(--muted); }
-.principle h3 { font-size: 1.375rem; font-weight: 500; line-height: 1.5; letter-spacing: normal; margin: 0 0 .625rem; }
-.principle p { font-size: 1.0625rem; line-height: 1.8; color: var(--muted); margin: 0; }
-.footer { border-top: 1px solid var(--line); min-height: 5rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; color: var(--muted); font-size: .875rem; }
+.item-number { font: 400 .8125rem/1.5 var(--sans); font-variant-numeric: tabular-nums; color: var(--muted); }
+.principle h3 { font-size: 1.5rem; font-weight: 600; line-height: 1.5; letter-spacing: normal; margin: 0 0 .625rem; }
+.principle p { font-size: 1.125rem; line-height: 1.8; margin: 0; }
+.footer { border-top: 1px solid var(--line); min-height: 5rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; color: var(--muted); font: 400 .875rem/1.6 var(--sans); }
 .footer p { margin: 0; }
 .footer a { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; }
 /* Chinese uses full-width punctuation and its natural glyph spacing. */
 html[lang="zh-CN"] { line-break: strict; word-break: normal; }
 /* Latin and Han text need different measures and vertical rhythms. */
-html[lang="en"] h1 { font-size: clamp(2.125rem, 5.8vw, 3.625rem); line-height: 1.18; letter-spacing: -.012em; }
+html[lang="en"] body { font-weight: 400; }
+html[lang="en"] h1 { font-size: clamp(2rem, 5.6vw, 3.5rem); line-height: 1.18; letter-spacing: -.012em; }
 html[lang="en"] h1 span { display: block; }
-html[lang="en"] .intro-lead { max-width: 62ch; font-size: 1.375rem; line-height: 1.55; }
+html[lang="en"] .intro-lead { max-width: 62ch; font-size: 1.375rem; font-weight: 500; line-height: 1.55; }
 html[lang="en"] .intro-mission { max-width: 68ch; font-size: 1.25rem; line-height: 1.6; }
 html[lang="en"] .principle h3 { font-size: 1.5rem; line-height: 1.3; }
-html[lang="en"] .principle p { font-size: 1.125rem; line-height: 1.6; }
+html[lang="en"] .principle p { font-size: 1.25rem; line-height: 1.55; }
 @media (max-width: 48rem) {
   .header { min-height: 4.75rem; }
   .intro { padding-block: 3rem; }
@@ -102,12 +103,11 @@ html[lang="en"] .principle p { font-size: 1.125rem; line-height: 1.6; }
   .intro { padding-block: 2.5rem; }
   .eyebrow { margin-bottom: 1.25rem; }
   h1 { margin-bottom: 1.5rem; }
-  .intro-lead { font-size: 1.125rem; }
-  .intro-mission { font-size: 1.0625rem; }
+  .intro-lead { font-size: 1.25rem; }
   .philosophy { padding-block: 1.75rem 2.5rem; }
   .philosophy h2 { margin-bottom: 1.75rem; }
   .principles { grid-template-columns: 1fr; row-gap: 2rem; }
   html[lang="en"] .intro-lead { font-size: 1.25rem; }
-  html[lang="en"] .intro-mission { font-size: 1.125rem; }
+  html[lang="en"] .intro-mission, html[lang="en"] .principle p { font-size: 1.1875rem; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

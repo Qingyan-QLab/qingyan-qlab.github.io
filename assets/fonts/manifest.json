@@ -16,8 +16,8 @@
   "serif": {
     "source": "https://raw.githubusercontent.com/adobe-fonts/source-han-serif/7889f11bf31170b5d092a083b357c8c8130f89e0/Variable/WOFF2/TTF/Subset/SourceHanSerifCN-VF.ttf.woff2",
     "source_sha256": "556749ba783b148fa1f48644e8883e5b9351f01abd0d1faad0ba24a21185e76a",
-    "subset_sha256": "43aab7a491bdb6d2ab786f3cbeb339f56b9a42f90434f5e7a6bccf1649b83e5c",
-    "bytes": 20988,
-    "glyphs": 33
+    "subset_sha256": "039a05ff266ad9042fe68afcb9ca082836abfdc9a444b514444316663a58874d",
+    "bytes": 93668,
+    "glyphs": 223
   }
 }
