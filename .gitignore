@@ -1,0 +1,6 @@
+.DS_Store
+.openai/
+dist/
+.artifacts/
+__pycache__/
+*.zip
