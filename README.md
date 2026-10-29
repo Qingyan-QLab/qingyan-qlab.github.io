@@ -14,13 +14,9 @@ Open http://127.0.0.1:8765/. No framework, package installation, or build step i
 
 ## Edit
 
-- `index.html`: homepage overview.
-- `vision.html`: the vision and its reliability requirement.
-- `philosophy.html`: four interconnected principles.
-- `about.html`: lab introduction and public-project link.
-- All pages carry Chinese and English text in `data-zh` / `data-en` attributes.
+- `index.html`: the complete single-page site: physical AI introduction, vision, and four principles, with Chinese and English text in `data-zh` / `data-en` attributes.
 - `style.css`: responsive layout and visual design.
-- `main.js`: language selection and page-specific metadata.
+- `main.js`: language selection and localized metadata.
 - `assets/manifold.svg`: original mathematical illustration, regenerated with `python3 scripts/generate-art.py`.
 
 ## Publishing
@@ -33,7 +29,7 @@ The domain stays registered and managed at GoDaddy. DNS records and current depl
 
 - Research scope and domain: supplied by the site owner on 2026-10-29.
 - Organization account and mission: verified against https://github.com/Qingyan-QLab on 2026-10-29.
-- Four principles, separate pages, vision before philosophy, and removal of an undefined reliability percentage: requested by the site owner on 2026-10-30.
+- A concise single page, an explanation directly following the headline, four principles, and removal of an undefined reliability percentage: requested by the site owner on 2026-10-30. Earlier separate pages and their navigation links have been removed.
 - Editorial reference: https://amilabs.xyz/ (clear goals and concrete explanations; no organization-specific claims or copy reused).
 - Remaining site copy and mathematical artwork: created for this website.
 
