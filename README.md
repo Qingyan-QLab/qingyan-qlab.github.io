@@ -17,7 +17,7 @@ Open http://127.0.0.1:8765/. No framework, package installation, or build step i
 - `index.html`: the complete single-page site: physical AI introduction, vision, and four principles, with Chinese and English text in `data-zh` / `data-en` attributes.
 - `style.css`: responsive layout and visual design.
 - `main.js`: language selection and localized metadata.
-- `assets/manifold.svg`: original mathematical illustration, regenerated with `python3 scripts/generate-art.py`.
+- The page uses typography only; no illustrations are displayed.
 
 ## Publishing
 
