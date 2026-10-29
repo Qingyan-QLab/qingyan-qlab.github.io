@@ -2,7 +2,7 @@
 
 Official static website for the [Qingyan-QLab](https://github.com/Qingyan-QLab) organization, intended for **https://qlab-ai.org/**.
 
-The site introduces six user-confirmed research directions: geometry, the physical world, embodied intelligence, continual learning, mental models, and robots that integrate seamlessly into human society. An overarching research goal connects verifiability to **99.9999% robot reliability**, explicitly labeled as a goal and tied to verification with defined tasks, environments, and time horizons. Research descriptions express interests and aspirations, rather than claims of completed results.
+The site connects four research pillars: **world modeling, embodied learning, understanding minds, and reliable coexistence**. These preserve the original scope of geometry, physics, embodiment, continual learning, mental models, and robots in human society. Verifiability is integrated into each pillar and the whole system. Reliability is a necessary condition for the vision of robots integrating into every aspect of human society. The site describes verifiable, measurable, highly reliable physical AI systems; specific metrics will be defined in technical research for particular tasks, operating environments, and failure types. Research descriptions express interests and aspirations, rather than claims of completed results.
 
 ## Local preview
 
@@ -14,9 +14,13 @@ Open http://127.0.0.1:8765/. No framework, package installation, or build step i
 
 ## Edit
 
-- `index.html`: content, semantic markup, and both languages in `data-zh` / `data-en` attributes.
+- `index.html`: homepage overview.
+- `vision.html`: the vision and its reliability requirement.
+- `philosophy.html`: four interconnected principles.
+- `about.html`: lab introduction and public-project link.
+- All pages carry Chinese and English text in `data-zh` / `data-en` attributes.
 - `style.css`: responsive layout and visual design.
-- `main.js`: language selection and accessible research tabs.
+- `main.js`: language selection and page-specific metadata.
 - `assets/manifold.svg`: original mathematical illustration, regenerated with `python3 scripts/generate-art.py`.
 
 ## Publishing
@@ -29,6 +33,8 @@ The domain stays registered and managed at GoDaddy. DNS records and current depl
 
 - Research scope and domain: supplied by the site owner on 2026-10-29.
 - Organization account and mission: verified against https://github.com/Qingyan-QLab on 2026-10-29.
+- Four principles, separate pages, vision before philosophy, and removal of an undefined reliability percentage: requested by the site owner on 2026-10-30.
+- Editorial reference: https://amilabs.xyz/ (clear goals and concrete explanations; no organization-specific claims or copy reused).
 - Remaining site copy and mathematical artwork: created for this website.
 
 No private repositories, internal company documents, unpublished results, or personal details are included in the site.

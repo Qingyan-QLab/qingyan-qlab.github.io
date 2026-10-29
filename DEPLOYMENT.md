@@ -38,10 +38,11 @@ curl -I https://qlab-ai.org/
 
 - Desktop layout and Chinese/English switching checked in a browser.
 - Mobile layouts checked at 390 px and 320 px; no horizontal overflow.
-- Research tabs checked by click and keyboard; research details expand/collapse.
+- Separate Home, Vision, Philosophy, and About pages; shared navigation and language selection.
+- Philosophy details expand/collapse; each homepage principle links to its full explanation.
 - Internal links, local assets, unique IDs, SVG/XML validity, and JavaScript syntax checked.
 - Public DNS answers checked against the four GitHub Pages A records and the `www` CNAME.
-- The custom domain serves the website, including the explicitly labeled 99.9999% reliability research goal.
+- The custom domain serves all four pages; reliability is described as verifiable and measurable, with specific metrics reserved for technical research.
 - HTTPS certificate approved for `qlab-ai.org` and `www.qlab-ai.org`; certificate verification succeeds.
 - HTTPS enforcement enabled; HTTP redirects to HTTPS, and HTTPS `www` redirects to the canonical domain.
 - Deployed HTML, CSS, JavaScript, illustration, favicon, and CNAME checked against local source bytes.

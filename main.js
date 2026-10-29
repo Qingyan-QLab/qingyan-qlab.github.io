@@ -1,8 +1,6 @@
 (() => {
   'use strict';
   const languageButton = document.getElementById('language');
-  const titles = {zh:'Q-lab · 理解世界，与人共生',en:'Q-lab · Understand the world. Live alongside us.'};
-  const descriptions = {zh:'Q-lab 聚焦 AI 基础研究，探索几何、物理世界、具身智能、永续学习与心智模型，走向无缝融入人类社会的机器人。',en:'Q-lab pursues fundamental AI research in geometry, physics, embodiment, continual learning, and mental models, toward robots that integrate seamlessly into human society.'};
   let language = 'zh';
   function setLanguage(next, updateURL = false) {
     language = next === 'en' ? 'en' : 'zh';
@@ -16,10 +14,10 @@
     languageLabels[0].classList.toggle('language-active', language === 'zh');
     languageLabels[2].classList.toggle('language-active', language === 'en');
     languageButton.setAttribute('aria-label', language === 'zh' ? 'Switch to English' : '切换至中文');
-    document.title = titles[language];
-    document.querySelector('meta[name="description"]').content = descriptions[language];
-    document.querySelector('meta[property="og:title"]').content = titles[language];
-    document.querySelector('meta[property="og:description"]').content = descriptions[language];
+    document.title = document.body.getAttribute(`data-title-${language}`);
+    document.querySelector('meta[name="description"]').content = document.body.getAttribute(`data-description-${language}`);
+    document.querySelector('meta[property="og:title"]').content = document.body.getAttribute(`data-title-${language}`);
+    document.querySelector('meta[property="og:description"]').content = document.body.getAttribute(`data-description-${language}`);
     try { localStorage.setItem('qlab-language', language); } catch { /* Storage is optional. */ }
     if (updateURL) {
       const url = new URL(window.location.href);
@@ -33,26 +31,4 @@
   setLanguage(requestedLanguage || savedLanguage || 'zh');
   languageButton.addEventListener('click', () => setLanguage(language === 'zh' ? 'en' : 'zh', true));
 
-  const tabs = [...document.querySelectorAll('[role="tab"]')];
-  function selectTab(tab, focus = false) {
-    tabs.forEach(candidate => {
-      const selected = candidate === tab;
-      candidate.setAttribute('aria-selected', String(selected));
-      candidate.tabIndex = selected ? 0 : -1;
-      document.getElementById(candidate.getAttribute('aria-controls')).hidden = !selected;
-      document.querySelector(`[data-diagram="${candidate.dataset.topic}"]`).classList.toggle('active', selected);
-    });
-    if (focus) tab.focus();
-  }
-  tabs.forEach((tab, index) => {
-    tab.addEventListener('click', () => selectTab(tab));
-    tab.addEventListener('keydown', event => {
-      let next;
-      if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
-      if (event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
-      if (event.key === 'Home') next = 0;
-      if (event.key === 'End') next = tabs.length - 1;
-      if (next !== undefined) { event.preventDefault(); selectTab(tabs[next], true); }
-    });
-  });
 })();
