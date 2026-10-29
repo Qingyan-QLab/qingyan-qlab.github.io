@@ -63,7 +63,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .skip-link { position: fixed; top: 12px; left: 16px; z-index: 100; padding: 14px 20px; background: var(--ink); color: white; transform: translateY(-180%); }
 .skip-link:focus { transform: translateY(0); }
 .intro { padding-block: 4.5rem 4rem; }
-h1 { font-family: var(--display); font-size: clamp(2.125rem, 5.8vw, 3.75rem); font-weight: 650; line-height: 1.35; letter-spacing: normal; margin: 0 0 2rem; text-wrap: balance; }
+h1 { font-family: var(--display); font-size: clamp(2.125rem, 5vw, 3.25rem); font-weight: 650; line-height: 1.35; letter-spacing: normal; margin: 0 0 2rem; text-wrap: balance; }
 /* Keep each short clause together when possible; wrap only when space requires it. */
 h1 span { display: inline-block; max-width: 100%; }
 .intro-lead, .intro-mission { margin: 0; }
