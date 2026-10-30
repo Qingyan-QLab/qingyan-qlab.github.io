@@ -2,7 +2,7 @@
 /* Self-hosted, OFL-licensed subsets. Sources and regeneration: assets/fonts/README.md. */
 @font-face {
   font-family: "QLab Serif";
-  src: url("assets/fonts/qlab-serif.woff2?v=cad519ae6835") format("woff2");
+  src: url("assets/fonts/qlab-serif.woff2?v=d0a17ce91c85") format("woff2");
   font-style: normal;
   font-weight: 400 650;
   font-display: swap;
@@ -16,7 +16,7 @@
 }
 @font-face {
   font-family: "QLab Sans CN";
-  src: url("assets/fonts/qlab-sans-cn.woff2?v=bc4d0d1b5188") format("woff2");
+  src: url("assets/fonts/qlab-sans-cn.woff2?v=a9d36b8af7d1") format("woff2");
   font-style: normal;
   font-weight: 400 600;
   font-display: swap;

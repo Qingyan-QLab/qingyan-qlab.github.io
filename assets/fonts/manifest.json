@@ -2,8 +2,8 @@
   "cn": {
     "source": "https://raw.githubusercontent.com/adobe-fonts/source-han-sans/a4f7cf94edfb9d7ffbdfc4841de276358bd7e0f2/Variable/WOFF2/TTF/Subset/SourceHanSansCN-VF.ttf.woff2",
     "source_sha256": "f971e3bff46f76b49e1d5510556c2297c618ec4b491a295a4e741cdd38257799",
-    "subset_sha256": "bc4d0d1b5188b42e2f002473e84065008dc20cb3daf1eb9a8a934a6476fc40b0",
-    "bytes": 41028,
+    "subset_sha256": "a9d36b8af7d14a94c58c932b8472474c985ffabff5f263a5b356eba4713afc1b",
+    "bytes": 40780,
     "glyphs": 164
   },
   "latin": {
@@ -16,8 +16,8 @@
   "serif": {
     "source": "https://raw.githubusercontent.com/adobe-fonts/source-han-serif/7889f11bf31170b5d092a083b357c8c8130f89e0/Variable/WOFF2/TTF/Subset/SourceHanSerifCN-VF.ttf.woff2",
     "source_sha256": "556749ba783b148fa1f48644e8883e5b9351f01abd0d1faad0ba24a21185e76a",
-    "subset_sha256": "cad519ae6835b6ce169adb7329b18551310d36f794b052a9211d0f20e7e6fb0c",
-    "bytes": 93364,
+    "subset_sha256": "d0a17ce91c8513e2a979a3285814a7ebce7aaaeb21001d021831e4bb273636b7",
+    "bytes": 92876,
     "glyphs": 222
   }
 }

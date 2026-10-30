@@ -2,7 +2,7 @@
 
 Official static website for the [Qingyan-QLab](https://github.com/Qingyan-QLab) organization, intended for **https://qlab-ai.org/**.
 
-The site connects four research pillars: **world modeling, embodied learning, understanding minds, and reliable coexistence**. These preserve the original scope of geometry, physics, embodiment, continual learning, mental models, and robots in human society. Verifiability is integrated into each pillar and the whole system. Reliability is a necessary condition for the vision of robots integrating into every aspect of human society. The site describes verifiable, measurable, highly reliable physical AI systems; specific metrics will be defined in technical research for particular tasks, operating environments, and failure types. Research descriptions express interests and aspirations, rather than claims of completed results.
+The site connects four research pillars: **world modeling, embodied learning, understanding minds, and reliable coexistence**. These preserve the original scope of geometry, physics, embodiment, continual learning, mental models, and AI systems in human society. Verifiability is integrated into each pillar and the whole system. Reliability is a necessary condition for the vision of artificial intelligence integrating into every aspect of human society. The site describes verifiable, measurable, highly reliable physical AI systems; specific metrics will be defined in technical research for particular tasks, operating environments, and failure types. Research descriptions express interests and aspirations, rather than claims of completed results.
 
 ## Local preview
 
