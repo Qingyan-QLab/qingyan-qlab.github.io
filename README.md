@@ -17,7 +17,7 @@ Open http://127.0.0.1:8765/. No framework, package installation, or build step i
 - `index.html`: the complete single-page site: physical AI introduction, vision, and four principles, with Chinese and English text in `data-zh` / `data-en` attributes.
 - `style.css`: responsive layout and visual design.
 - `main.js`: language selection and localized metadata.
-- The page uses typography only; no illustrations are displayed.
+- The page uses the owner-supplied Q-Lab logo and typography; no illustrations are displayed. The original logo is retained as `assets/qlab-logo.png`; CSS frames its artwork and blends its white background into the page.
 - `TYPOGRAPHY.md`: bilingual typesetting decisions and primary-source design references.
 - `assets/fonts/`: self-hosted, OFL-licensed subsets; regenerate them with `scripts/subset-fonts.py` when copy changes. See the font directory README.
 

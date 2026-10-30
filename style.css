@@ -51,10 +51,10 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 ::selection { background: #e8c5ae; color: var(--ink); }
 .wrap { width: min(60rem, calc(100% - clamp(2.5rem, 8vw, 6rem))); margin-inline: auto; }
 .header { min-height: 5.5rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); font-family: var(--display); font-weight: 400; }
-.wordmark { display: inline-flex; align-items: center; font-size: 2rem; font-weight: 600; line-height: 1; letter-spacing: -.035em; }
-.wordmark-dot { color: var(--accent); }
-.q-mark { position: relative; width: 22px; height: 22px; margin-right: 12px; border: 2px solid var(--ink); border-radius: 50%; }
-.q-mark::after { content: ""; position: absolute; height: 10px; width: 2px; bottom: -5px; right: 1px; background: var(--accent); transform: rotate(-45deg); }
+/* Frame the supplied logo's white margins without altering the original artwork. */
+.wordmark { display: inline-flex; align-items: center; flex-shrink: 0; min-height: 44px; }
+.brand-logo { position: relative; display: block; width: 128px; aspect-ratio: 1100 / 460; overflow: hidden; mix-blend-mode: multiply; }
+.brand-logo img { position: absolute; display: block; width: 139.636364%; max-width: none; height: auto; left: -20%; top: -58.695652%; }
 .header-actions { display: flex; gap: 2rem; align-items: center; }
 .language { display: flex; gap: 9px; align-items: center; min-height: 44px; border: 0; background: transparent; color: var(--muted); font-size: .875rem; line-height: 1.5; padding: 10px 4px; }
 .language-active { color: var(--ink); font-weight: 600; }
@@ -97,8 +97,7 @@ html[lang="en"] .principle p { font-size: 1.25rem; line-height: 1.55; }
 }
 @media (max-width: 40rem) {
   .header-actions { gap: 1.25rem; }
-  .wordmark { font-size: 1.75rem; }
-  .q-mark { width: 19px; height: 19px; margin-right: 9px; }
+  .brand-logo { width: 108px; }
   .intro { padding-block: 2.5rem; }
   h1 { margin-bottom: 1.5rem; }
   .intro-lead { font-size: 1.25rem; }
