@@ -68,7 +68,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 h1 { font-family: var(--display); font-size: clamp(2.125rem, 5vw, 3.25rem); font-weight: 650; line-height: 1.35; letter-spacing: normal; margin: 0 0 2rem; text-wrap: balance; }
 /* Keep each short clause together when possible; wrap only when space requires it. */
 h1 span { display: inline-block; max-width: 100%; }
-h1 span:nth-child(2) { color: var(--accent); }
 .intro-lead, .intro-mission { margin: 0; }
 .intro-lead { max-width: 34em; font-size: 1.375rem; font-weight: 550; line-height: 1.75; }
 .intro-mission { max-width: 40em; font-size: 1.125rem; line-height: 1.8; margin-top: 1.25rem; }
