@@ -23,8 +23,8 @@
 }
 :root {
   --paper: #fbf7ef;
-  --ink: #153c37;
-  --muted: #48635d;
+  --ink: #252525;
+  --muted: #626262;
   --line: #bfd4ca;
   --accent: #007d71;
   --mint: #e0eee8;
@@ -60,7 +60,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .header-actions { display: flex; gap: 2rem; align-items: center; }
 .language { display: flex; gap: 9px; align-items: center; min-height: 44px; border: 0; background: transparent; color: var(--muted); font-size: .875rem; line-height: 1.5; padding: 10px 4px; }
 .language-active { color: var(--accent); font-weight: 600; }
-.language-divider { color: #969d91; }
+.language-divider { color: #999; }
 .github-link { display: flex; align-items: center; gap: 9px; min-height: 44px; font-size: .9375rem; }
 .skip-link { position: fixed; top: 12px; left: 16px; z-index: 100; padding: 14px 20px; background: var(--ink); color: white; transform: translateY(-180%); }
 .skip-link:focus { transform: translateY(0); }
